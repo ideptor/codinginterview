@@ -30,5 +30,19 @@ public class TestMinimumBST {
 		// then
 		assertEquals("[3][1, 5][0, 2, 4, 6]", linkedListHolder.toString());
 	}
+	
+	@Test
+	public void p4_5_check_BST() {
+		
+		// given
+		int[] val = 	{1, 2, 3, 4, 5, 6, 7};
+		
+		int[] bst = 	{3, 1, 5, 0, 2, 4, 6};
+		int[] non_bst =	{3, 5, 1, 0, 2, 4, 6};
+		
+		// then
+		assertEquals(true, BSTUtil.checkBST(bst,val,0));
+		assertEquals(false, BSTUtil.checkBST(non_bst,val,0));
+	}
 
 }

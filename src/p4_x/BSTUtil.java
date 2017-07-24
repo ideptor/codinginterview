@@ -37,4 +37,19 @@ public class BSTUtil {
 		return msg;
 	}
 
+	public static boolean checkBST(int[] bst, int[] val, int curNode) {
+		
+		if(curNode>=bst.length || curNode==-1 || bst[curNode]==-1) return true;
+		
+		int leftChildIdx = (curNode*2+1)<bst.length? curNode*2+1 : -1;
+		int rightChildIdx = (curNode*2+2)<bst.length? curNode*2+2 : -1;
+		
+		if(checkBST(bst, val, leftChildIdx)==false || checkBST(bst, val, rightChildIdx)==false) return false;
+		
+		if(leftChildIdx!=-1 && val[bst[leftChildIdx]]>val[bst[curNode]]) return false;
+		if(rightChildIdx!=-1 && val[bst[rightChildIdx]]<val[bst[curNode]]) return false;
+		
+		return true;
+	}
+
 }
