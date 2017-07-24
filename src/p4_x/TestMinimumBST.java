@@ -17,5 +17,18 @@ public class TestMinimumBST {
 		//then
 		assertEquals("[3, 1, 5, 0, 2, 4, 6, 0, 0, 0, 0, 0, 0, 0]", BSTUtil.print(bst));
 	}
+	
+	@Test
+	public void p4_4_make_linked_list_from_BST() {
+		
+		// given 
+		int[] bst = {3, 1, 5, 0, 2, 4, 6};
+		
+		// when
+		LinkedListHolder linkedListHolder = LinkedListHolderFactory.createLinkedListHolder(bst);
+		
+		// then
+		assertEquals("[3][1, 5][0, 2, 4, 6]", linkedListHolder.toString());
+	}
 
 }
