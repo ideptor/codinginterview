@@ -35,7 +35,6 @@ public class TestMinimumBST {
 	public void p4_5_check_BST() {
 		
 		// given
-//		int[] val = 	{1, 2, 3, 4, 5, 6, 7};
 		
 		int[] bst = 	{3, 1, 5, 0, 2, 4, 6};
 		int[] non_bst =	{3, 5, 1, 0, 2, 4, 6};
@@ -50,11 +49,26 @@ public class TestMinimumBST {
 		
 		// given
 		int[] non_bst = {1, 12, 123, 114, 115, 216, 317};
-
-//		int[] non_bst =	{3, 1, 5, 0, 2, 4, 6};
 		
 		// then
 		assertEquals(false, BSTUtil.checkBST(non_bst,0,null,null));
 	}
 
+	@Test
+	public void p4_6_findNextOrder() {
+		
+		// given
+		Integer[] bt1 = {1, 1,1, null,null,1,null, null,null,null,null,null,1};  // given:0, next:5
+		Integer[] bt2 = {1, 1,null, 1};											 // given:1, next:0
+		Integer[] bt3 = {1, 1,null, null,1,null,null, null,null,1};				 // given:4, next:0
+		Integer[] bt4 = {1, null,1, null,null,null,1, null,null,null,null,null,null,1}; // given:6, next:null
+	
+		// then
+		assertEquals(new Integer(5), InOrderTraversal.findNextOrder(bt1,0));
+		assertEquals(new Integer(0), InOrderTraversal.findNextOrder(bt2,1));
+		assertEquals(new Integer(0), InOrderTraversal.findNextOrder(bt3,4));
+		assertEquals(null, InOrderTraversal.findNextOrder(bt4,6));
+		
+		
+	}
 }
