@@ -8,8 +8,8 @@ public class Stack <T> {
 	int top=-1;
 	
 	public void push(T elem) {
-		stack.add(elem);
 		top++;
+		stack.set(top, elem);
 	}
 	public boolean empty() {
 		return (top>=0)?false:true;
@@ -17,9 +17,13 @@ public class Stack <T> {
 	public T pop() {
 		if(empty()) return null;
 		
-		T elem = stack.get(top);
+		T elem = stack.remove(top);
 		top--;
 		return elem;
+	}
+	public T peek() {
+		if(empty()) return null;
+		return stack.get(top);
 	}
 
 }

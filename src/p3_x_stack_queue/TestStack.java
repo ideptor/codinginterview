@@ -19,6 +19,7 @@ public class TestStack {
 		
 		// then
 		assertEquals(false, stack.empty());
+		assertEquals(new Integer(3), stack.peek());
 		assertEquals(new Integer(3), stack.pop());
 		assertEquals(new Integer(2), stack.pop());
 		assertEquals(new Integer(1), stack.pop());
