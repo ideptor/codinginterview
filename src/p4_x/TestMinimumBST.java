@@ -41,8 +41,20 @@ public class TestMinimumBST {
 		int[] non_bst =	{3, 5, 1, 0, 2, 4, 6};
 		
 		// then
-		assertEquals(true, BSTUtil.checkBST(bst,val,0));
-		assertEquals(false, BSTUtil.checkBST(non_bst,val,0));
+		assertEquals(true, BSTUtil.checkBST(bst,val,0,null,null));
+		assertEquals(false, BSTUtil.checkBST(non_bst,val,0,null,null));
+	}
+	
+	@Test
+	public void p4_5_check_BST_advanced() {
+		
+		// given
+		int[] non_val = {1, 12, 123, 114, 115, 216, 317};
+
+		int[] non_bst =	{3, 1, 5, 0, 2, 4, 6};
+		
+		// then
+		assertEquals(false, BSTUtil.checkBST(non_bst,non_val,0,null,null));
 	}
 
 }
