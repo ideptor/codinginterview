@@ -37,22 +37,22 @@ public class BSTUtil {
 		return msg;
 	}
 
-	public static boolean checkBST(int[] bst, int[] val, int curNode, Integer max, Integer min) {
+	public static boolean checkBST(int[] bst,  int curNode, Integer max, Integer min) {
 		
 		if(curNode>=bst.length || curNode==-1 || bst[curNode]==-1) return true;
 		
-		if(max != null && val[bst[curNode]]>max.intValue()) return false;
-		if(min != null && val[bst[curNode]]<min.intValue()) return false;
+		if(max != null && bst[curNode]>max.intValue()) return false;
+		if(min != null && bst[curNode]<min.intValue()) return false;
 		
 		int leftChildIdx = (curNode*2+1)<bst.length? curNode*2+1 : -1;
 		int rightChildIdx = (curNode*2+2)<bst.length? curNode*2+2 : -1;
 		
 		
-		if(checkBST(bst, val, leftChildIdx, val[bst[curNode]], min)==false) return false;
-		if(checkBST(bst, val, rightChildIdx,max,val[bst[curNode]])==false) return false;
+		if(checkBST(bst, leftChildIdx, bst[curNode], min)==false) return false;
+		if(checkBST(bst, rightChildIdx,max,bst[curNode])==false) return false;
 		
-		if(leftChildIdx!=-1 && val[bst[leftChildIdx]]>val[bst[curNode]]) return false;
-		if(rightChildIdx!=-1 && val[bst[rightChildIdx]]<val[bst[curNode]]) return false;
+		if(leftChildIdx!=-1 && bst[leftChildIdx]>bst[curNode]) return false;
+		if(rightChildIdx!=-1 && bst[rightChildIdx]<bst[curNode]) return false;
 		
 		return true;
 	}
