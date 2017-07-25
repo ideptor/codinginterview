@@ -1,4 +1,4 @@
-package p4_x;
+package p4_x_bst;
 
 public class LinkedListHolderFactory {
 
