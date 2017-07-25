@@ -1,6 +1,6 @@
 package p4_x_bst.traversal;
 
-import java.util.ArrayList;
+import p3_x_stack_queue.Queue;
 
 public class Traversal {
 
@@ -53,7 +53,7 @@ public class Traversal {
 
 	public static String bfs(Integer[] tree, Integer node) {
 
-		Queue queue = new Queue();
+		Queue<Integer> queue = new Queue<>();
 		queue.enqueue(node);
 		
 		String trace="";

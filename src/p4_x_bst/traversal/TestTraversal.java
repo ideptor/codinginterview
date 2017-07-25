@@ -2,7 +2,6 @@ package p4_x_bst.traversal;
 
 import static org.junit.Assert.*;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestTraversal {
@@ -31,25 +30,5 @@ public class TestTraversal {
 
 	}
 	
-	@Test
-	public void test_queue_test() {
-		
-		// given
-		Queue q = new Queue();
-		assertEquals(0, q.size());
-		
-		q.enqueue(0);
-		assertEquals(1, q.size());
-		
-		q.enqueue(1);
-		assertEquals(2, q.size());
-		
-		assertEquals(new Integer(0), q.dequeue());
-		assertEquals(1, q.size());
-		
-		assertEquals(new Integer(1), q.dequeue());
-		assertEquals(0, q.size());
-		
-		
-	}
+
 }
