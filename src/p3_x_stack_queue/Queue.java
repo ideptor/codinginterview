@@ -2,7 +2,7 @@ package p3_x_stack_queue;
 
 import java.util.ArrayList;
 
-public class Queue<T extends Integer> {
+public class Queue<T> {
 	ArrayList<T> queue=new ArrayList<T>();
 	
 	int front=0;

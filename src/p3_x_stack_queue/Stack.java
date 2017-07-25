@@ -2,7 +2,7 @@ package p3_x_stack_queue;
 
 import java.util.ArrayList;
 
-public class Stack <T extends Integer> {
+public class Stack <T> {
 
 	ArrayList<T> stack=new ArrayList<>();
 	int top=-1;
